@@ -29,8 +29,10 @@ import org.encog.ml.data.MLData;
 import org.encog.ml.data.MLDataPair;
 import org.encog.ml.data.MLDataSet;
 import org.encog.ml.data.basic.BasicMLDataSet;
+import org.encog.ml.train.MLTrain;
 import org.encog.neural.networks.BasicNetwork;
 import org.encog.neural.networks.layers.BasicLayer;
+import org.encog.neural.networks.training.propagation.back.Backpropagation;
 import org.encog.neural.networks.training.propagation.resilient.ResilientPropagation;
 
 /**
@@ -77,6 +79,7 @@ public class XORHelloWorld {
 		
 		// train the neural network
 		final ResilientPropagation train = new ResilientPropagation(network, trainingSet);
+		// MLTrain train = new Backpropagation(network, trainingSet);
 
 		int epoch = 1;
 
