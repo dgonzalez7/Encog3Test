@@ -32,8 +32,13 @@ import org.encog.ml.data.basic.BasicMLDataSet;
 import org.encog.ml.train.MLTrain;
 import org.encog.neural.networks.BasicNetwork;
 import org.encog.neural.networks.layers.BasicLayer;
+import org.encog.neural.networks.training.lma.LevenbergMarquardtTraining;
 import org.encog.neural.networks.training.propagation.back.Backpropagation;
+import org.encog.neural.networks.training.propagation.manhattan.ManhattanPropagation;
+import org.encog.neural.networks.training.propagation.quick.QuickPropagation;
+import org.encog.neural.networks.training.propagation.resilient.RPROPType;
 import org.encog.neural.networks.training.propagation.resilient.ResilientPropagation;
+import org.encog.neural.networks.training.propagation.scg.ScaledConjugateGradient;
 
 /**
  * XOR: This example is essentially the "Hello World" of neural network
@@ -78,8 +83,14 @@ public class XORHelloWorld {
 		MLDataSet trainingSet = new BasicMLDataSet(XOR_INPUT, XOR_IDEAL);
 		
 		// train the neural network
-		final ResilientPropagation train = new ResilientPropagation(network, trainingSet);
-		// MLTrain train = new Backpropagation(network, trainingSet);
+		// final ResilientPropagation train = new ResilientPropagation(network, trainingSet);
+		// train.setRPROPType(RPROPType.iRPROPp);
+		
+		// final MLTrain train = new Backpropagation(network, trainingSet, 0.7, 0.3);
+		// final ManhattanPropagation train = new ManhattanPropagation(network, trainingSet, 0.00001);
+		// final QuickPropagation train = new QuickPropagation(network, trainingSet, 2.0);
+		// final ScaledConjugateGradient train = new ScaledConjugateGradient(network, trainingSet);
+		final LevenbergMarquardtTraining train = new LevenbergMarquardtTraining(network, trainingSet);
 
 		int epoch = 1;
 
