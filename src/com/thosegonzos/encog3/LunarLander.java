@@ -65,11 +65,13 @@ public class LunarLander {
 		
 		if( args.length>0 && args[0].equalsIgnoreCase("anneal"))
 		{
+			System.out.println("Simulated Annealing");
 			train = new NeuralSimulatedAnnealing(
 					network, new PilotScore(), 10, 2, 100);
 		}
 		else
 		{
+			System.out.println("Genetic Algorithm");
 			train = new MLMethodGeneticAlgorithm(new MethodFactory(){
 				@Override
 				public MLMethod factor() {
