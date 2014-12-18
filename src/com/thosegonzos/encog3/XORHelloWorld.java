@@ -84,14 +84,14 @@ public class XORHelloWorld {
 		MLDataSet trainingSet = new BasicMLDataSet(XOR_INPUT, XOR_IDEAL);
 		
 		// train the neural network
-		final ResilientPropagation train = new ResilientPropagation(network, trainingSet);
+		// final ResilientPropagation train = new ResilientPropagation(network, trainingSet);
 		// train.setRPROPType(RPROPType.iRPROPp);
 		
 		// final MLTrain train = new Backpropagation(network, trainingSet, 0.7, 0.3);
 		// final ManhattanPropagation train = new ManhattanPropagation(network, trainingSet, 0.00001);
 		// final QuickPropagation train = new QuickPropagation(network, trainingSet, 2.0);
 		// final ScaledConjugateGradient train = new ScaledConjugateGradient(network, trainingSet);
-		// final LevenbergMarquardtTraining train = new LevenbergMarquardtTraining(network, trainingSet);
+		final LevenbergMarquardtTraining train = new LevenbergMarquardtTraining(network, trainingSet);
 
 		int epoch = 1;
 
