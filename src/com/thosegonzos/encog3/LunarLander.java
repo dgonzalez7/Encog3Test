@@ -72,6 +72,7 @@ public class LunarLander {
 		else
 		{
 			System.out.println("Genetic Algorithm");
+			
 			train = new MLMethodGeneticAlgorithm(new MethodFactory(){
 				@Override
 				public MLMethod factor() {
