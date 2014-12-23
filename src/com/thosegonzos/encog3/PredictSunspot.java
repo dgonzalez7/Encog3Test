@@ -126,8 +126,10 @@ public class PredictSunspot {
 				TemporalDataDescription.Type.RAW,true,true);
 		result.addDescription(desc);
 		
-		for(int year = TRAIN_START;year<TRAIN_END;year++)
+		for(int year = TRAIN_START;year<=TRAIN_END;year++)
 		{
+			System.out.println("Year: " + (year + STARTING_YEAR));
+			
 			TemporalPoint point = new TemporalPoint(1);
 			point.setSequence(year);
 			point.setData(0, this.normalizedSunspots[year]);
